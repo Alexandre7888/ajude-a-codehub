@@ -3,29 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodeHUB Ads</title>
+
+<title>CodeHUB - Ajude a Plataforma</title>
+
+<!-- Script de verificação / carregamento do AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4326714383982538"
+     crossorigin="anonymous"></script>
 
 <style>
     body {
-        font-family: Arial, sans-serif;
-        background: #f2f2f2;
-        padding: 20px;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(135deg, #1d1f27, #2a2d38);
+        color: #ffffff;
         text-align: center;
+        padding: 40px 20px;
     }
 
     h1 {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
+        font-size: 32px;
+    }
+
+    p {
+        opacity: 0.8;
+        font-size: 17px;
+        margin-bottom: 25px;
     }
 
     .btn {
-        padding: 12px 20px;
+        padding: 14px 22px;
         border: none;
+        border-radius: 10px;
         font-size: 18px;
-        margin: 10px;
-        border-radius: 8px;
         cursor: pointer;
+        margin: 10px;
         transition: 0.3s;
+        font-weight: bold;
         color: white;
+        width: 230px;
     }
 
     .mostrar {
@@ -36,59 +51,72 @@
     }
 
     .compartilhar {
-        background: #28a745;
+        background: #00c853;
     }
     .compartilhar:hover {
-        background: #1e7e34;
+        background: #009c3e;
     }
 
     #areaAd {
-        margin-top: 25px;
         display: none;
-        padding: 20px;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        margin-top: 30px;
+        padding: 25px;
+        background: #ffffff;
+        color: black;
+        border-radius: 12px;
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 0 20px rgba(0,0,0,0.25);
+        animation: fade 0.4s ease;
     }
+
+    @keyframes fade {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
 </style>
 
 </head>
 <body>
 
-<h1>CodeHUB - Anúncio</h1>
+<h1>Ajude a CodeHUB</h1>
+<p>Clique no botão abaixo para carregar um anúncio e ajudar a manter a plataforma funcionando 💙</p>
 
 <button id="mostrarAd" class="btn mostrar">Mostrar anúncio</button>
 <button id="btnShare" class="btn compartilhar">Compartilhar</button>
 
 <div id="areaAd">
 
-<!-- SEU ANÚNCIO - CÓDIGO ORIGINAL -->
+<!-- ************* SEU ANÚNCIO ORIGINAL ************* -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4326714383982538"
      crossorigin="anonymous"></script>
-<!-- CodeHUB -->
+
 <ins class="adsbygoogle"
      style="display:inline-block;width:728px;height:90px"
      data-ad-client="ca-pub-4326714383982538"
      data-ad-slot="5155139232"></ins>
+
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<!-- FIM DO ANÚNCIO -->
+<!-- ************* FIM DO ANÚNCIO ************* -->
 
 </div>
 
 <script>
-// Mostrar anúncio
+// Mostrar o anúncio
 document.getElementById("mostrarAd").onclick = () => {
     document.getElementById("areaAd").style.display = "block";
 };
 
-// Compartilhar URL
+// Compartilhar
 document.getElementById("btnShare").onclick = async () => {
     if (navigator.share) {
         await navigator.share({
-            title: "CodeHUB",
-            text: "Veja esse anúncio:",
+            title: "Ajude a CodeHUB",
+            text: "Clique neste link e ajude a plataforma assistindo um anúncio:",
             url: window.location.href
         });
     } else {
