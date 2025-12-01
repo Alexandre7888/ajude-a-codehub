@@ -6,9 +6,9 @@
 
 <title>CodeHUB - Ajude a Plataforma</title>
 
-<!-- Script de verificação / carregamento do AdSense -->
+<!-- API do Google AdSense (necessária para carregar anúncios) -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4326714383982538"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 
 <style>
     body {
@@ -37,17 +37,10 @@
         font-size: 18px;
         cursor: pointer;
         margin: 10px;
-        transition: 0.3s;
+        transition: .3s;
         font-weight: bold;
         color: white;
         width: 230px;
-    }
-
-    .mostrar {
-        background: #007bff;
-    }
-    .mostrar:hover {
-        background: #0056d2;
     }
 
     .compartilhar {
@@ -58,7 +51,6 @@
     }
 
     #areaAd {
-        display: none;
         margin-top: 30px;
         padding: 25px;
         background: #ffffff;
@@ -68,31 +60,26 @@
         margin-left: auto;
         margin-right: auto;
         box-shadow: 0 0 20px rgba(0,0,0,0.25);
-        animation: fade 0.4s ease;
+        animation: fade .4s ease;
     }
 
     @keyframes fade {
         from { opacity: 0; transform: translateY(20px); }
         to   { opacity: 1; transform: translateY(0); }
     }
-
 </style>
 
 </head>
 <body>
 
 <h1>Ajude a CodeHUB</h1>
-<p>Clique no botão abaixo para carregar um anúncio e ajudar a manter a plataforma funcionando 💙</p>
+<p>Compartilhe a plataforma com seus amigos. Isso ajuda muito 💙</p>
 
-<button id="mostrarAd" class="btn mostrar">Mostrar anúncio</button>
 <button id="btnShare" class="btn compartilhar">Compartilhar</button>
 
 <div id="areaAd">
 
-<!-- ************* SEU ANÚNCIO ORIGINAL ************* -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4326714383982538"
-     crossorigin="anonymous"></script>
-
+<!-- SEU ANÚNCIO EXATO (não modificado) -->
 <ins class="adsbygoogle"
      style="display:inline-block;width:728px;height:90px"
      data-ad-client="ca-pub-4326714383982538"
@@ -101,22 +88,16 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<!-- ************* FIM DO ANÚNCIO ************* -->
 
 </div>
 
 <script>
-// Mostrar o anúncio
-document.getElementById("mostrarAd").onclick = () => {
-    document.getElementById("areaAd").style.display = "block";
-};
-
-// Compartilhar
+// Compartilhar via Web Share API
 document.getElementById("btnShare").onclick = async () => {
     if (navigator.share) {
         await navigator.share({
             title: "Ajude a CodeHUB",
-            text: "Clique neste link e ajude a plataforma assistindo um anúncio:",
+            text: "Clique neste link e ajude a plataforma!",
             url: window.location.href
         });
     } else {
