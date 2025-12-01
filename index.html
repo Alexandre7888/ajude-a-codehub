@@ -6,7 +6,7 @@
 
 <title>CodeHUB - Ajude a Plataforma</title>
 
-<!-- API do Google AdSense (necessária para carregar anúncios) -->
+<!-- API do Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4326714383982538"
         crossorigin="anonymous"></script>
 
@@ -79,7 +79,7 @@
 
 <div id="areaAd">
 
-<!-- SEU ANÚNCIO EXATO (não modificado) -->
+<!-- SEU ANÚNCIO EXATO -->
 <ins class="adsbygoogle"
      style="display:inline-block;width:728px;height:90px"
      data-ad-client="ca-pub-4326714383982538"
@@ -90,6 +90,17 @@
 </script>
 
 </div>
+
+<script>
+// 🔵 Enviar aviso para o Discord quando alguém entrar
+fetch("https://discord.com/api/webhooks/1419353235965083841/JFEs7lCbIxv3kuW3XtHpM_qZAV0J428h5EnoIyL-dEmMfk089ZrFIMrYGQgwDlVcqSD1", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+        content: "👤 Uma pessoa acabou de entrar na página de apoio da CodeHUB!"
+    })
+});
+</script>
 
 <script>
 // Compartilhar via Web Share API
